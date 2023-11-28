@@ -17,6 +17,6 @@ jobs:
       - name: Start ddev
         run: ddev start
       - name: Require a module
-        run: ddev composer require drupal/gutenberg
+        run: ddev composer require drupal/gutenberg:2.x-dev
       - name: Run all the tests
         run: ddev exec phpunit web/modules/contrib/gutenberg
