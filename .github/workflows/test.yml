@@ -8,6 +8,11 @@ jobs:
   ddev_install:
     name: Install ddev and prepare
     runs-on: ubuntu-latest
+    
+  test_contrib:
+    name: Test running contrib tests
+    needs: ddev_install
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       # We always use DDEV, so download it.
@@ -15,11 +20,6 @@ jobs:
         run: curl -LO https://raw.githubusercontent.com/drud/ddev/master/scripts/install_ddev.sh && bash install_ddev.sh
       - name: Start ddev
         run: ddev start
-  test_contrib:
-    name: Test running contrib tests
-    needs: ddev_install
-    runs-on: ubuntu-latest
-    steps:
       - name: Require a module
         run: ddev composer require drupal/gutenberg:2.x-dev
       - name: Run unit tests for said module
@@ -29,5 +29,11 @@ jobs:
     needs: ddev_install
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+      # We always use DDEV, so download it.
+      - name: Install ddev
+        run: curl -LO https://raw.githubusercontent.com/drud/ddev/master/scripts/install_ddev.sh && bash install_ddev.sh
+      - name: Start ddev
+        run: ddev start
       - name: Run some core tests
         run: ddev exec phpunit web/core/modules/book/tests/src/FunctionalJavascript
