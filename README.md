@@ -1,4 +1,7 @@
 # drupal-contrib-ddev
+
+[![E2E Tests](https://github.com/frontkom/drupal-contrib-ddev/actions/workflows/test.yml/badge.svg)](https://github.com/frontkom/drupal-contrib-ddev/actions/workflows/test.yml)
+
 A ready made setup to run and write all kinds of tests for Drupal contrib modules
 
 ## Usage
