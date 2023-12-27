@@ -5,10 +5,6 @@ on:
   pull_request:
     branches: [main]
 jobs:
-  ddev_install:
-    name: Install ddev and prepare
-    runs-on: ubuntu-latest
-    
   test_contrib:
     name: Test running contrib tests
     needs: ddev_install
