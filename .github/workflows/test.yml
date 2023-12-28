@@ -29,5 +29,6 @@ jobs:
         run: curl -LO https://raw.githubusercontent.com/drud/ddev/master/scripts/install_ddev.sh && bash install_ddev.sh
       - name: Start ddev
         run: ddev start
+      - run: ddev composer install
       - name: Run some core tests
         run: ddev exec phpunit web/core/modules/book/tests/src/FunctionalJavascript
