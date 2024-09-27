@@ -14,8 +14,8 @@ jobs:
       matrix:
         version:
           - "2.x"
-          - "3.x"
-          - "4.x"
+          - "3.0.x"
+          - "4.0.x"
     steps:
       - uses: actions/checkout@v3
 
