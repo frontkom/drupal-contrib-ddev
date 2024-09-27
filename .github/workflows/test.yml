@@ -10,6 +10,12 @@ jobs:
   test:
     name: Test that contrib tests can run
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version:
+          - "2.x"
+          - "3.0.x"
+          - "4.0.x"
     steps:
       - uses: actions/checkout@v3
 
@@ -19,6 +25,6 @@ jobs:
       - name: Start ddev
         run: ddev start
       - name: Require a module
-        run: ddev composer require drupal/gutenberg:2.x-dev
+        run: ddev composer require drupal/gutenberg:${{ matrix.version }}-dev
       - name: Run all the tests
         run: ddev exec phpunit web/modules/contrib/gutenberg
