@@ -1,7 +1,7 @@
 name: drupal-contrib-ddev
 type: drupal10
 docroot: web
-php_version: "8.1"
+php_version: "8.3"
 router_http_port: "12780"
 router_https_port: "12781"
 webserver_type: nginx-fpm
@@ -9,8 +9,8 @@ xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns: []
 database:
-    type: mariadb
-    version: "10.4"
+    type: mysql
+    version: "8.0"
 use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
