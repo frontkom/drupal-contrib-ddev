@@ -17,7 +17,7 @@ jobs:
           - "3.0.x"
           - "4.0.x"
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       # We always use DDEV, so download it.
       - name: Install ddev
